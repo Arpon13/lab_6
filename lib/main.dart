@@ -1,6 +1,7 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:lab_6/home.dart';
 
 void main() {
   runApp(Lab_6());
@@ -12,6 +13,19 @@ class Lab_6 extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter UI',
       home: Scaffold(
+        // bottomNavigationBar: BottomNavigationBar(
+        //   items: [
+        //   BottomNavigationBarItem(
+        //     icon: Icon(Icons.home),
+        //     label: 'Home'
+        //     ),
+        //   BottomNavigationBarItem(
+        //     icon: Icon(Icons.settings),
+        //     label: 'Settings'
+        //     ),
+        // ],),
+
+
         drawer: Drawer(
           child: ListView(
             children: [
@@ -62,33 +76,12 @@ class Lab_6 extends StatelessWidget {
           backgroundColor: Colors.blue,
           foregroundColor: const Color.fromARGB(255, 11, 9, 9),
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Image(
-                image: NetworkImage('https://wallpapers-clan.com/wp-content/uploads/2024/02/beautiful-naruto-uzumaki-clouds-desktop-wallpaper-preview.jpg'),
-              ),
-              Image.network(
-                "https://wallpapers-clan.com/wp-content/uploads/2024/02/beautiful-naruto-uzumaki-clouds-desktop-wallpaper-preview.jpg",
-              ),
-              Image.network(
-                "https://wallpapers-clan.com/wp-content/uploads/2024/02/beautiful-naruto-uzumaki-clouds-desktop-wallpaper-preview.jpg",
-              ),
-              Image.network(
-                "https://wallpapers-clan.com/wp-content/uploads/2024/02/beautiful-naruto-uzumaki-clouds-desktop-wallpaper-preview.jpg",
-              ),
-              Image.network(
-                "https://wallpapers-clan.com/wp-content/uploads/2024/02/beautiful-naruto-uzumaki-clouds-desktop-wallpaper-preview.jpg",
-              ),
-              CachedNetworkImage(
-              imageUrl: "https://mcdn.wallpapersafari.com/medium/91/15/v7SGlT.jpg",
-              placeholder: (context, url) => CircularProgressIndicator(),
-              errorWidget: (context, url, error) => Icon(Icons.error),
-     ), 
-            ]
+        body: Home(),
+        
+          
+  
           ),
-        ),
-          ),
-        );    
+        );
+       
   }
 }
