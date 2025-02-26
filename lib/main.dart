@@ -15,6 +15,23 @@ class Lab_6 extends StatelessWidget {
         drawer: Drawer(
           child: ListView(
             children: [
+              Container(
+              color: Colors.blue,
+              height: 80,
+              child: DrawerHeader
+              (
+               child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Icon(Icons.logo_dev_outlined),
+                  TextButton.icon(
+                    onPressed: () {},
+                    label: Text('Home'),
+                  )
+                ]
+               )
+              ),
+              ),
               ListTile(
                 leading: Icon(Icons.alarm),
                 title: Text("Recents"),
